@@ -10,9 +10,7 @@ public class AddEmployee extends BasePom{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-	
 
-	
 	//Campo de la ventana de AddEmployee
 	
 	//Boton add Employee
@@ -44,10 +42,6 @@ public class AddEmployee extends BasePom{
 			Clic(BtnSave);
 			
 					String mensaje = ObtenerTexto(AlerMensaje);
-					
-//					System.out.println(mensaje);
-//					System.out.println("Success\n" +
-//		                     "Successfully Saved");
 					Assert.assertEquals(mensaje,"Success\n" +
 		                     "Successfully Saved");	
 				
