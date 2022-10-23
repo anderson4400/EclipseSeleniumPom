@@ -1,10 +1,9 @@
 package POM;
 
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.AfterTest;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class Login_test {
 	
@@ -14,7 +13,7 @@ public class Login_test {
   @Test
   public void f() throws InterruptedException {
 	  Login login = new Login(driver);
-	  login.RegistroLogin();
+	  login.RegistroLogin("Admin","admin123");
   }
   
   
@@ -23,7 +22,6 @@ public class Login_test {
 	  login = new Login(driver);
 	  driver=login.DriverConection(driver);
 	  login.visit("https://opensource-demo.orangehrmlive.com/",driver);
-	  
   }
   
 

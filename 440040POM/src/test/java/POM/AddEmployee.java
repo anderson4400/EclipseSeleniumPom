@@ -31,13 +31,13 @@ public class AddEmployee extends BasePom{
 	//Mensaje de confirmacion
 	By AlerMensaje= By.xpath("//div[@class='oxd-toast-content oxd-toast-content--success']");
 	
-	public void AgregarAddEmploee() throws InterruptedException {
+	public void AgregarAddEmploee(String FistName, String MiddleName, String LastName) throws InterruptedException {
 		 Thread.sleep(5000);
 		if(isDisplayed(BtnAddEmployee)) {
 			Clic(BtnAddEmployee);
-			Type("dasdsa5",CampoFistName );
-			Type("dasdsa56",CampoMiddleName );
-			Type("dasdsa454",CampoLastName );
+			Type(FistName,CampoFistName );
+			Type(MiddleName,CampoMiddleName );
+			Type(LastName,CampoLastName );
 			Thread.sleep(11000);
 			Clic(BtnSave);
 			

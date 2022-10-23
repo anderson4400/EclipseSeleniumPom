@@ -20,8 +20,8 @@ public class AddEmployee_Test {
 	  Logout logout = new Logout(driver);
 	  
 	  
-	  login.RegistroLogin();
-	  addEmployee.AgregarAddEmploee();
+	  login.RegistroLogin("Admin","admin123");
+	  addEmployee.AgregarAddEmploee("dasdas", "dasdas", "dasdas");
 	  logout.RealizarLogout();
   }
   

@@ -10,8 +10,7 @@ public class Login extends BasePom{
 		// TODO Auto-generated constructor stub
 	}
 	
-	String Username = "Admin";
-	String Password = "admin123";
+
 	
 	//los campos del login del portal de orageHRM
 	
@@ -28,10 +27,10 @@ public class Login extends BasePom{
 	By img = By.xpath("//img[@alt='company-branding']");
 	
 	
-	public void RegistroLogin() throws InterruptedException {
+	public void RegistroLogin(String UserName, String Password) throws InterruptedException {
 		 Thread.sleep(5000);
 		if(isDisplayed(img)) {
-			Type(Username, CampoUserName);
+			Type(UserName, CampoUserName);
 			Type(Password, CampoPassword);
 			Clic(BtnLogin);
 		}else {
