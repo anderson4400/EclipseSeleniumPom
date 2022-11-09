@@ -1,9 +1,11 @@
 package POM;
 
-import org.openqa.selenium.By;
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +16,7 @@ public class BasePom {
 	
 	public BasePom(WebDriver driver) {
 		this.driver=driver;
+		PageFactory.initElements(driver, this);
 	}
 	
 	
@@ -24,17 +27,17 @@ public class BasePom {
 	}
 	
 	
-	public void Type(String txt, By locator) {
-		driver.findElement(locator).sendKeys(txt);
+	public void Type(String txt, WebElement locator) {
+		locator.sendKeys(txt);
 	}
 	
-	public void Clic(By locator) {
-		driver.findElement(locator).click();
+	public void Clic(WebElement locator) {
+		locator.click();
 	}
 	
-	public boolean isDisplayed (By locator) {
+	public boolean isDisplayed (WebElement locator) {
 		try {
-			driver.findElement(locator).isDisplayed();
+			locator.isDisplayed();
 			return true;
 		}catch(org.openqa.selenium.NoSuchElementException e) {
 			return false;
@@ -50,9 +53,9 @@ public class BasePom {
 		}
 	}
 	
-	public String  ObtenerTexto(By locator) {
+	public String  ObtenerTexto(WebElement locator) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement Category_Body = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		WebElement Category_Body = wait.until(ExpectedConditions.visibilityOf(locator));
 		String valor = Category_Body.getText();
 		return valor;
 	}
@@ -61,6 +64,5 @@ public class BasePom {
 		String valor = driver.switchTo().alert().getText();
 		return valor;
 	}
-
 
 }

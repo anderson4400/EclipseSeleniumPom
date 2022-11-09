@@ -21,7 +21,8 @@ public class AddEmployee_Test {
 	  
 	  
 	  login.RegistroLogin("Admin","admin123");
-	  addEmployee.AgregarAddEmploee("dasdas", "dasdas", "dasdas");
+	  //Se Agrego otro parametro para para le Id del Employee
+	  addEmployee.AgregarAddEmploee("dasdas", "dasdas", "dasdas","111111");
 	  logout.RealizarLogout();
   }
   

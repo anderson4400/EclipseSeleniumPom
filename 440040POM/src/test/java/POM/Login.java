@@ -1,7 +1,8 @@
 package POM;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class Login extends BasePom{
 
@@ -10,22 +11,20 @@ public class Login extends BasePom{
 		// TODO Auto-generated constructor stub
 	}
 	
-
-	
 	//los campos del login del portal de orageHRM
-	
+
 	//campo username
-	By CampoUserName = By.xpath("//input[@placeholder='Username']");
+	@FindBy (xpath = "//input[@placeholder='Username']") WebElement CampoUserName;
 
 	//campo password
-	By CampoPassword = By.xpath("//input[@placeholder='Password']");
-	
-	//Boton de login
-	By BtnLogin = By.xpath("//button[@type='submit']");
-	
+	@FindBy (xpath = "//input[@placeholder='Password']") WebElement CampoPassword;
+
+	//Boton de login	
+	@FindBy (xpath = "//button[@type='submit']") WebElement BtnLogin;
+
 	//imagen de la plataforma 
-	By img = By.xpath("//img[@alt='company-branding']");
-	
+	@FindBy (xpath = "//img[@alt='company-branding']") WebElement img;
+
 	
 	public void RegistroLogin(String UserName, String Password) throws InterruptedException {
 		 Thread.sleep(5000);

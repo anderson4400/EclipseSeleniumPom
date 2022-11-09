@@ -1,7 +1,8 @@
  package POM;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class Logout extends BasePom{
 
@@ -9,14 +10,17 @@ public class Logout extends BasePom{
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	
+	//Se cambiaron los By por los FindBy(PageFactory para inicializar los elementos Web para optimizar)
+	
 	//Boton del ferfil del usuario
-	By BtnPefil = By.xpath("//img[@class='oxd-userdropdown-img']");
+	@FindBy (xpath = "//img[@class='oxd-userdropdown-img']") WebElement BtnPefil;
 	
 	//Boton Logout
-	By BtnLogout = By.xpath("//a[normalize-space()='Logout']");
-	
-	
+	@FindBy (xpath = "//a[normalize-space()='Logout']") WebElement BtnLogout;
+
+
 	
 	public void RealizarLogout() throws InterruptedException {
 		 Thread.sleep(5000);
